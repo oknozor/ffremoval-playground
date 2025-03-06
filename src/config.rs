@@ -1,9 +1,24 @@
-pub static FEATURE_X_ENABLED: bool = true;  // This is the flag we want to remove later
+1. Locate all files where `FEATURE_X_ENABLED` is defined or used.
 
-pub fn feature_x() {
-    if FEATURE_X_ENABLED {
-        println!("Feature X is enabled!");
-    } else {
-        println!("Feature X is disabled.");
-    }
-}
+2. In each file, remove or comment out the corresponding code. For example:
+
+    - If it's a variable assignment:
+      ```javascript
+      // const FEATURE_X_ENABLED = true;
+      ```
+
+    - If it's a function call:
+      ```javascript
+      // if (FEATURE_X_ENABLED) {
+      //   // code for the feature
+      // }
+      ```
+
+    - If it's an import:
+      ```javascript
+      // import FeatureX from './FeatureX';
+      ```
+
+3. After making these changes, run your test suite to ensure there are no unexpected issues.
+
+4. Commit and push the changes with a meaningful commit message like "Remove feature flag FEATURE_X_ENABLED".
